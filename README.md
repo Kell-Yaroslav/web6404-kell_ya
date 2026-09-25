@@ -7,4 +7,4 @@
 
 «Нет учителя кроме врага, он укажет на твою слабость и на свою силу» — Орсон Скотт Кард.
 
-(https://i.pinimg.com/originals/65/c9/fb/65c9fb75ec0f21935937dbe8dc2b9337.jpg?nii=t)
+<img width="1500" height="999" alt="image" src="https://github.com/user-attachments/assets/bc8dd322-1089-42e9-b383-d32d34432614" />
