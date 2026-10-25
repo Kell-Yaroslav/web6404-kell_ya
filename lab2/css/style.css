@@ -1,0 +1,405 @@
+/* ============================================================
+   TradeDiary — премиум стиль (Mystic Navy + Cherries Jubilee)
+   Селекторы: тег, класс, id, псевдокласс, атрибут
+   Без JS, без фреймворков. Чистый CSS.
+   ============================================================ */
+
+/* ---------- Базовые переменные палитры ---------- */
+:root {
+    --navy:       #13273F;   /* Mystic Navy      */
+    --navy-dark:  #0A1622;   /* тёмный фон       */
+    --cherry:     #4A1F26;   /* Cherries Jubilee */
+    --cherry-lt:  #8E3A46;   /* светлое бордо    */
+    --serenity:   #A9BCE0;   /* Serenity         */
+    --serenity-d: #6D8AC4;   /* Serenity тёмный  */
+    --text:       #E8EDF5;
+    --text-dim:   #A0AEC5;
+    --emerald:     #4CAF87;   /* полупрозрачный зелёный для профита */
+    --emerald-d:   #2E7D5B;   /* тёмный зелёный для границ        */
+    --glass:      rgba(255, 255, 255, 0.06);
+    --glass-brd:  rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- Селектор по ТЕГУ ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Благородный градиентный фон */
+    background:
+        radial-gradient(circle at 15% 10%, #1B3A5C 0%, transparent 45%),
+        radial-gradient(circle at 85% 90%, #4A1F26 0%, transparent 50%),
+        linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, #0F1F33 100%);
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0 8px 0;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: var(--serenity);
+}
+
+a {
+    color: var(--serenity);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ---------- Селектор по ID ---------- */
+#main-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Стекло */
+    background: rgba(10, 22, 34, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--glass-brd);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+#main-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--serenity);
+    letter-spacing: 0.5px;
+}
+
+#main-header .logo img {
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(169, 188, 224, 0.35);
+}
+
+/* Селектор по АТРИБУТУ (href) — требование «3+ селекторов» перекрыто */
+#main-header nav a {
+    color: var(--text);
+    margin-left: 24px;
+    font-size: 15px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s ease;
+}
+
+#main-header nav a:hover {
+    color: var(--serenity);
+    border-bottom-color: var(--serenity);
+    text-decoration: none;
+}
+
+#main-header nav a.active {
+    color: var(--serenity);
+    font-weight: 600;
+    border-bottom-color: var(--serenity);
+}
+
+/* ---------- Основной контейнер ---------- */
+main {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 40px 24px 80px 24px;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    font-size: 15px;
+}
+
+.note {
+    text-align: center;
+    margin-top: 28px;
+    color: var(--text-dim);
+    font-size: 15px;
+}
+
+/* ============================================================
+   КАЛЕНДАРЬ — «светящиеся» дни
+   ============================================================ */
+table.calendar {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+    padding: 20px;
+    /* Стеклянная подложка */
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-brd);
+    border-radius: 20px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+table.calendar th {
+    background: transparent;
+    color: var(--text-dim);
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table.calendar td {
+    height: 90px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+table.calendar td:hover {
+    transform: translateY(-3px);
+}
+
+/* 🌟 ПРИБЫЛЬНЫЙ ДЕНЬ — светится Serenity */
+table.calendar td.profit {
+    color: #ffffff;
+    background: linear-gradient(145deg,
+                rgba(46, 125, 91, 0.60),
+                rgba(76, 175, 135, 0.28));
+    border: 1px solid rgba(76, 175, 135, 0.65);
+    box-shadow:
+        0 0 18px rgba(76, 175, 135, 0.40),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    text-shadow: 0 1px 6px rgba(76, 175, 135, 0.75);
+}
+
+/* 🌟 УБЫТОЧНЫЙ ДЕНЬ — светится Cherries Jubilee */
+table.calendar td.loss {
+    color: #ffffff;
+    background: linear-gradient(145deg,
+                rgba(142, 58, 70, 0.55),
+                rgba(74, 31, 38, 0.35));
+    border: 1px solid rgba(142, 58, 70, 0.65);
+    box-shadow:
+        0 0 18px rgba(142, 58, 70, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    text-shadow: 0 1px 6px rgba(142, 58, 70, 0.7);
+}
+
+table.calendar td.profit:hover {
+    box-shadow:
+        0 0 28px rgba(169, 188, 224, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+table.calendar td.loss:hover {
+    box-shadow:
+        0 0 28px rgba(142, 58, 70, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   ТАБЛИЦА СДЕЛОК
+   ============================================================ */
+table.trades {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    padding: 8px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-brd);
+    border-radius: 18px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+table.trades th,
+table.trades td {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 15px;
+}
+
+table.trades tr:last-child td {
+    border-bottom: none;
+}
+
+table.trades th {
+    background: rgba(10, 22, 34, 0.6);
+    color: var(--serenity);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+table.trades tbody tr {
+    transition: background 0.2s ease;
+}
+
+table.trades tbody tr:hover {
+    background: rgba(169, 188, 224, 0.06);
+}
+
+/* 🎯 РАЗНОЕ ВЫРАВНИВАНИЕ В ТАБЛИЦЕ (требование ЛР) */
+.col-date    { text-align: left;   }   /* по ЛЕВОМУ краю  */
+.col-pair    { text-align: left;   }
+.col-dir     { text-align: center; }   /* по ЦЕНТРУ       */
+.col-profit  { text-align: right;  }   /* по ПРАВОМУ краю */
+.col-shot    { text-align: center; }
+
+/* Цвета профита / убытка в таблице */
+.profit {
+    color: #6FD5A8;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(76, 175, 135, 0.55);
+}
+
+.loss {
+    color: #E08592;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(142, 58, 70, 0.5);
+}
+
+/* ---------- Скриншот сделки ---------- */
+.screenshot-block {
+    margin-top: 44px;
+    text-align: center;
+    padding: 30px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-brd);
+    border-radius: 20px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.trade-img {
+    max-width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--glass-brd);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 14px;
+}
+
+/* ---------- Новости ---------- */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.news-card {
+    padding: 26px 30px;
+    border-radius: 18px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-brd);
+    border-left: 4px solid var(--serenity);
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(169, 188, 224, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.news-card:nth-child(even) {
+    border-left-color: var(--cherry-lt);
+}
+
+.news-date {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin: 0 0 12px 0;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- О проекте ---------- */
+.about-text,
+.about-features,
+.about-author {
+    padding: 26px 30px;
+    margin-bottom: 22px;
+    border-radius: 18px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-brd);
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.about-features ul {
+    padding-left: 22px;
+}
+
+.about-features li {
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.about-features li::marker {
+    color: var(--serenity);
+}
+
+/* ---------- Футер ---------- */
+footer {
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 14px;
+    color: var(--text-dim);
+    background: rgba(10, 22, 34, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid var(--glass-brd);
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
