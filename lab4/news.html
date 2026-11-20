@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeDiary — Новости</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="images/logo.png" alt="Логотип TradeDiary" width="50" height="50">
+                <span class="header__title">TradeDiary</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Календарь</a>
+                <a href="trades.html" class="nav__link">Сделки</a>
+                <a href="news.html" class="nav__link nav__link--active">Новости</a>
+                <a href="about.html" class="nav__link">О проекте</a>
+                <a href="login.html" class="nav__link">Вход</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="page-title">Мировые новости</h1>
+        <p class="page-subtitle">Важные события для трейдеров</p>
+
+        <!-- ЯВНЫЙ FLEXBOX для списка новостей -->
+        <div class="news-list">
+            <article class="news-card">
+                <p class="news-card__date">15 мая 2026</p>
+                <h2 class="news-card__title">ФРС повысила ключевую ставку</h2>
+                <p class="news-card__text">Федеральная резервная система США объявила о повышении ставки на 0.25%.</p>
+            </article>
+
+            <article class="news-card">
+                <p class="news-card__date">12 мая 2026</p>
+                <h2 class="news-card__title">Bitcoin преодолел отметку $70,000</h2>
+                <p class="news-card__text">Криптовалюта обновила исторический максимум на фоне роста интереса институциональных инвесторов.</p>
+            </article>
+
+            <article class="news-card">
+                <p class="news-card__date">10 мая 2026</p>
+                <h2 class="news-card__title">ЕЦБ сохранил мягкую монетарную политику</h2>
+                <p class="news-card__text">Европейский центральный банк оставил ставку без изменений, поддержав рынок акций ЕС.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2026 TradeDiary · Келль Я.А. · группа 6404</p>
+    </footer>
+</body>
+</html>
