@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeDiary — Сделки</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="images/logo.png" alt="Логотип TradeDiary" width="50" height="50">
+                <span class="header__title">TradeDiary</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav__link">Календарь</a>
+                <a href="trades.html" class="nav__link nav__link--active">Сделки</a>
+                <a href="news.html" class="nav__link">Новости</a>
+                <a href="about.html" class="nav__link">О проекте</a>
+                <a href="login.html" class="nav__link">Вход</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="page-title">Дневник сделок</h1>
+        <p class="page-subtitle">История моих торговых операций</p>
+
+        <table class="trades-table">
+            <thead>
+                <tr>
+                    <th class="trades-table__col trades-table__col--date">Дата</th>
+                    <th class="trades-table__col trades-table__col--pair">Пара</th>
+                    <th class="trades-table__col trades-table__col--dir">Направление</th>
+                    <th class="trades-table__col trades-table__col--profit">Результат</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="trades-table__col trades-table__col--date">01.05.2026</td>
+                    <td class="trades-table__col trades-table__col--pair">EUR/USD</td>
+                    <td class="trades-table__col trades-table__col--dir">Long</td>
+                    <td class="trades-table__col trades-table__col--profit trades-table__profit">+120$</td>
+                </tr>
+                <tr>
+                    <td class="trades-table__col trades-table__col--date">02.05.2026</td>
+                    <td class="trades-table__col trades-table__col--pair">BTC/USD</td>
+                    <td class="trades-table__col trades-table__col--dir">Short</td>
+                    <td class="trades-table__col trades-table__col--profit trades-table__loss">−30$</td>
+                </tr>
+                <tr>
+                    <td class="trades-table__col trades-table__col--date">03.05.2026</td>
+                    <td class="trades-table__col trades-table__col--pair">GBP/USD</td>
+                    <td class="trades-table__col trades-table__col--dir">Long</td>
+                    <td class="trades-table__col trades-table__col--profit trades-table__profit">+210$</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">&copy; 2026 TradeDiary · Келль Я.А. · группа 6404</p>
+    </footer>
+</body>
+</html>
