@@ -11,10 +11,10 @@ class FormDataLogger {
         console.log('========================================');
         console.log('   ДАННЫЕ ФОРМЫ АВТОРИЗАЦИИ');
         console.log('========================================');
-        console.log('👤 Логин:                   ', this.login);
-        console.log('🔒 Пароль:                  ', '*'.repeat(this.password.length));
-        console.log('✅ Согласие на обработку:   ', this.isConsentGiven ? 'ДА' : 'НЕТ');
-        console.log('🕒 Время отправки:          ', this.timestamp);
+        console.log(' Логин:                   ', this.login);
+        console.log(' Пароль:                  ', '*'.repeat(this.password.length));
+        console.log(' Согласие на обработку:   ', this.isConsentGiven ? 'ДА' : 'НЕТ');
+        console.log(' Время отправки:          ', this.timestamp);
         console.log('========================================');
     }
 }
